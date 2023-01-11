@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	</head>
+	<body>
+		<div class="grid-container">
+		  <header class="header">
+			<p id="dash-title">
+				Pravan Dashboard 2022
+			</p>
+			<button id="btn_refresh" onclick="loadData()">
+				Actualiser
+			</button>
+		  </header>
+		  <aside class="sidenav">
+			<div id="logo">
+				<img src="{{url_for('static', filename='img/logo.png')}}" height="60px" width="60px"/>
+				<p style="display:inline">M1 BIG DATA </p>
+			</div>
+			<div id="menu">
+				<div><p>Dashboard</p></div>
+				<div><p>Add</p></div>
+				<div><p>Details</p></div>
+				<div><p>Logout</p></div>
+			</div>
+		  </aside>
+		  <main class="main">
+			<div class="card" id="card1">
+				<div class="card-header">
+					<p>Number of students in each specialty</p>
+				</div>
+				<div class="card-content" id="cardTable">
+					<div class="bigNumber" id="specialite1">
+						<p class="specialiteLabel"></p>
+						<p class="specialiteNum"></p>
+					</div>
+					<div class="bigNumber" id="specialite2">
+						<p class="specialiteLabel"></p>
+						<p class="specialiteNum"></p>
+					</div>
+					<div class="bigNumber" id="specialite3">
+						<p class="specialiteLabel"></p>
+						<p class="specialiteNum"></p>
+					</div>
+					<div class="bigNumber" id="specialite4">
+						<p class="specialiteLabel"></p>
+						<p class="specialiteNum"></p>
+					</div>
+					<div class="bigNumber"id="specialite5">
+						<p class="specialiteLabel"></p>
+						<p class="specialiteNum"></p>
+					</div>
+					<div class="bigNumber"id="specialite6">
+						<p class="specialiteLabel"></p>
+						<p class="specialiteNum"></p>
+					</div>
+					<div class="bigNumber"id="specialite7">
+						<p class="specialiteLabel"></p>
+						<p class="specialiteNum"></p>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="card" id="card2">
+				<div class="card-header">
+					<p>Bar Chart: Predicted number of students per year </p>
+				</div>
+				<div class="card-content">
+					<canvas id="bar-chart" height="220" width="380"></canvas>
+				</div>
+			</div>
+			<div class="card" id="card3">
+				<div class="card-header">
+					<p>Line Chart: evolution of the number of students per year and per specialty</p>
+				</div>
+				<div class="card-content" >
+					<canvas id="line-chart" height="300" width="800"></canvas>
+				</div>
+			</div>
+			<div class="card" id="card4">
+				<div class="card-header">
+					<p>Pie Chart: number of students passed per year</p>
+				</div>
+				<div class="card-content" >
+					<canvas id="pie-chart" height="210" width="400"></canvas>
+				</div>
+			</div>
+			  <div class="card" id="card6">
+				<div class="card-header">
+					<p>Horizontal bar chart: number of women in each specialty</p>
+				</div>
+				<div class="card-content" >
+					<canvas id="HorizontalBar-chart" width="800" height="450"></canvas>
+				</div>
+			</div>
+
+			<div class="card" id="card5">
+				<div class="card-header">
+					<p>Doughnut chart: number of man in each specialty</p>
+				</div>
+				<div class="card-content" >
+					<canvas id="doughnut-chart"  width="800" height="450"></canvas>
+				</div>
+			</div>
+			  <div class="card" id="card7">
+				<div class="card-header">
+					<p>Radar chart:Comparison between number of man and woman in each year</p>
+				</div>
+				<div class="card-content" >
+					<canvas id="Radar-chart"  width="800" height="600"></canvas>
+				</div>
+			</div>
+			  <div class="card" id="card8">
+				  <div class="card-header">
+					  <p>Line chart:Comparison between number of man and woman </p>
+				  </div>
+				  <div class="card-content" >
+					  <canvas id="Line-chartTwo" height="300" width="800"></canvas>
+				  </div>
+			  </div>
+		  </main>
+		  <footer class="footer"></footer>
+		</div>
+		<script src="{{url_for('static', filename='script.js')}}"></script>
+	</body>
+</html>
